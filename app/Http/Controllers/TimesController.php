@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Campeonato;
+use App\Models\Time;
 use Illuminate\Http\Request;
 
 class TimesController extends Controller
@@ -16,19 +18,14 @@ class TimesController extends Controller
         return view('times.create');
     }
 
-    public function store(Request $request)
+    public function store($novosTimes)
     {
+        /*
         $nomeTime1 = $request->input('time1');
-        $nomeTime2 = $request->input('time2');
-        $nomeTime3 = $request->input('time3');
-        $nomeTime4 = $request->input('time4');
-        $nomeTime5 = $request->input('time5');
-        $nomeTime6 = $request->input('time6');
-        $nomeTime7 = $request->input('time7');
-        $nomeTime8 = $request->input('time8');
+        $time1 = new Time();
+        $time1->nome = $nomeTime1;
+        $nomeTime1->save();*/
+        return redirect('campeonatos/quartas');
 
-        dd($request->all());
     }
-
-
 }

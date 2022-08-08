@@ -13,13 +13,13 @@ class CampeonatosController extends Controller
 {
     public function index()
     {
-        $campeonatos = Campeonato::query()->orderBy('nome')->get();
-        return view('campeonatos.quartas')->with('campeonatos', $campeonatos);
+        $campeonatos = Campeonato::all();
+        return view('campeonatos.quartas',['campeonatos' => $campeonatos]);
     }
 
     public function create()
     {
-        return view('campeonatos/quartas');
+        return view('campeonatos.quartas');
     }
 
     public function store(Request $request)
@@ -30,7 +30,9 @@ class CampeonatosController extends Controller
         $campeonato->nome = $nomeCampeonato;
         $campeonato->save();
 
-        $times = [
+
+        //Coletando os times inscritos e enviando para o TimesController
+        $timesNovos = [
             'time1' => $request->input('time1'),
             'time2' => $request->input('time2'),
             'time3' => $request->input('time3'),
@@ -41,15 +43,7 @@ class CampeonatosController extends Controller
             'time8' => $request->input('time8'),
         ];
 
-        //Atribuindo todos os times ao campeonato criado
-        foreach ($times as $time) {
-            $novoTime = new Time();
-            $novoTime->nome = $request->input('time1');
-            $novoTime->idCampeonato = $campeonato->getAttributes('id');
-            $novoTime->save();
-        }
-
-        dd($request->all());
+        return redirect('campeonatos/quartas');
     }
 
     public function show(Campeonato $campeonatos)

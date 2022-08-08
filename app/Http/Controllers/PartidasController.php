@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Campeonato;
 use App\Models\partidas;
+use App\Models\Time;
 use Illuminate\Http\Request;
 
 class PartidasController extends Controller
@@ -33,9 +35,10 @@ class PartidasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

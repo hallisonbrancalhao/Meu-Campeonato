@@ -11,5 +11,11 @@ Route::get('/', function () {
 Route::post('/times/criar', [TimesController::class, 'store']);
 Route::post('/campeonatos/criar', [CampeonatosController::class, 'store']);
 Route::get('/campeonatos/quartas', [CampeonatosController::class, 'create']);
-Route::get('/campeonatos/semifinal', [CampeonatosController::class, 'create']);
-Route::get('/campeonatos/finalfinal', [CampeonatosController::class, 'create']);
+
+Route::get('/campeonatos/semifinais', function () {
+    return view('campeonatos.semifinal');
+});
+
+Route::get('/campeonatos/final', function () {
+    return view('campeonatos.final');
+});
