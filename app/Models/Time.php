@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Time extends Model
 {
     use HasFactory;
+    protected $fillable = ['id', 'nome', 'idCampeonato', 'GP', 'GS', 'pontos', 'created_at'];
 }

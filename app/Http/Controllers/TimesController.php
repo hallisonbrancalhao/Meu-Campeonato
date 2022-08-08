@@ -26,6 +26,8 @@ class TimesController extends Controller
         $nomeTime6 = $request->input('time6');
         $nomeTime7 = $request->input('time7');
         $nomeTime8 = $request->input('time8');
+
+        dd($request->all());
     }
 
 

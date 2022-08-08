@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('partidas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idTimeVisitante')->constrained('times');
-            $table->foreignId('idTimeCasa')->constrained('times');
-            $table->foreignId('idCampeonato')->constrained('campeonatos');
+            $table->foreignId('idTimeVisitante')->constrained('times')->nullable();
+            $table->foreignId('idTimeCasa')->constrained('times')->nullable();
+            $table->foreignId('idCampeonato')->constrained('campeonatos')->nullable();
             $table->integer('golsTimeCasa');
             $table->integer('golsTimeVisitante');
             $table->integer('fase');

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('times', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 64);
-            $table->foreignId('idCampeonato')->constrained('campeonatos');
+            $table->foreignId('idCampeonato')->constrained('campeonatos')->nullable();
             $table->integer('GP');
             $table->integer('GS');
             $table->integer('pontos');
