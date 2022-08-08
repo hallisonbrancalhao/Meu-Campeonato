@@ -1,14 +1,13 @@
 <?php
 
 use App\Http\Controllers\TimesController;
+use App\Http\Controllers\CampeonatosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/ola', function () {
-    echo "Olá mundo";
-});
-
-Route::get('/times', [TimesController::class, 'index']);
+Route::post('/times/criar', [TimesController::class, 'create']);
+Route::post('/campeonatos/criar', [CampeonatosController::class, 'store']);
+Route::get('/campeonatos/quartas', [CampeonatosController::class, 'create']);
