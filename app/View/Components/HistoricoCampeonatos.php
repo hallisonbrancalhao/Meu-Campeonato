@@ -32,9 +32,7 @@ class HistoricoCampeonatos extends Component
     }
 
     public function campeonatos() {
-        return [
-            'Basileirão',
-            'Copa do Brasil'
-        ];
+
+        return Campeonato::all();
     }
 }

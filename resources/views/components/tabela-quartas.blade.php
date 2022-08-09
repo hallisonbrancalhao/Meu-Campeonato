@@ -29,7 +29,6 @@
                 <li class="list-group-item">1</li>
                 <li class="list-group-item w-25">Fortaleza</li>
             </ul>
-
             <a href="/campeonatos/semifinais" class="mt-3 w-25 btn btn-success btn-sm" type="submit">Próxima fase</a>
         </div>
     </div>
