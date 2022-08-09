@@ -1,5 +1,4 @@
 <x-layout title="Quartas de Finais">
-{{--    <x-tabela-quartas times="{{ $times }}"/>--}}
     <div class="container  py-5">
         <div class="row mb-5 col-sm-12 text-center">
             <h1> Quartas de finais </h1>
@@ -16,7 +15,6 @@
             </div>
         </div>
     </div>
-
 </x-layout>
 
 

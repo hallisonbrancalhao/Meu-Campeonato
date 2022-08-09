@@ -1,64 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1 align="center">Meu Campeonato</h1>
+<h2 align="center">Simulador de campeonato</h2>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h3> Descrição do projeto </h3>
+Nota pessoal: Este é meu <strong>primeiro projeto</strong> utilizando Laravel com PHP </br></br>
+Consiste em um sistema que permite o usuário cadastrar 8 times em um campeonato, o sistema simulará os resultados e retornará um campeão no final das fases (Quartas, semifinais e finais).
 
-## About Laravel
+`Funcionalidade 1`: Cadastrar times no banco de dados;</br>
+`Funcionalidade 2`: Simular as partidas, chaveamento e fases do campeonato;</br>
+`Funcionalidade 3`: Define um campeão;</br>
+`Funcionalidade 4`: Guarda o campeonato em um histórico;</br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h3> ✔️ Técnicas e tecnologias utilizadas </h3>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- ``PHP``
+- ``Laravel``
+- ``PhpStorm IDEA``
+- ``sqlite``
+- ``Bootstrap``
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Definição da estrutura de dados
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Defini 3 tabelas principais que se relacionam entre si.</br>
+![Modelo do banco](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/modelo-banco.png?raw=true) </br>
 
-## Laravel Sponsors
+- Criei as migrations baseadas neste modelo.</br>
+![Modelo do banco](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/migrations.png?raw=true) </br>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- O projeto possui o padrão MVC estabelecido
 
-### Premium Partners
+## Telas e usabilidade
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Ao abrir o programa, será apresentada a view index
+  ![Modelo do banco](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/inicio.png?raw=true) </br>
+- Não será possível inicial um campeonato sem que todos os times estejam cadastrados</br>
+  ![Modelo do banco](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/requisicao.png?raw=true) </br>
+- Após o cadastro, será simulada de forma dinâmica através da view "tabela"</br>
+  ![Modelo do banco](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/view-quartas.png?raw=true) </br>
+- E com isso a reenderização resultará na seguinte tela </br>
+![Modelo do banco](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/quartas.png?raw=true) </br>
+- A cada fase, o time vencedor receberá um UPDATE na fase que o mesmo possui
+- Conforme a fase muda, a query para busca dos times também, por exemplo: Quartas de finais = "Todos os times com {fase=4}", Semi finais = "Todos os times com {fase=2}" e assim por diante
+- Por fim, será simulada a final e definido um campeão. Atribuindo o id do time campeão ao idCampeao na tabela do campeonato em vigência, e assim por diante.
+  ![Modelo do banco](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/final.png?raw=true) </br>
 
-## Contributing
+<h1 align="center">🌎 Onde você me encontra? 🌍</h1>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<div align="center" >  
+  <a href = "mailto:hallison.o.b@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/hallison-brancalhao/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+</div>

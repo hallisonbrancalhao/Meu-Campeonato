@@ -30,7 +30,7 @@ class CampeonatosController extends Controller
             left join times c on
                 a.idTimeCasa = c.id and
                 a.idCampeonato = c.idCampeonato
-        where a.fase = 4
+        where a.fase = 4 and a.idCampeonato = 2
         ");
 
         return view('campeonatos.quartas', compact('partidas'));

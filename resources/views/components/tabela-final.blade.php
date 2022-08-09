@@ -1,6 +1,6 @@
 <div class="container py-5">
     <div class="row mb-5 col-sm-12 text-center">
-        <h1> Semi de finais </h1>
+        <h1> Grande final </h1>
         <div class="row mb-10 col-sm-12 justify-content-center ">
 
             <ul class="mt-5 mb-2 list-group justify-content-center list-group-horizontal">
