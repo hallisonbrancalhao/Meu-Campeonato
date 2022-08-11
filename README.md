@@ -40,23 +40,28 @@ php artisan migrate
 
 ### Telas e usabilidade
 
-- Ao abrir o programa, será apresentada a view index
+- Ao abrir o programa, será apresentada a view index</br>
+
 ![index](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/inicio.png?raw=true) </br>
 </br>
 </br>
 - Não será possível inicial um campeonato sem que todos os times estejam cadastrados</br>
-![Campos-required](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/requisicao.png?raw=true) </br>
+
+![CamposRequired](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/requisicao.png?raw=true) </br>
 </br>
 </br>
 - Após o cadastro, será simulada de forma dinâmica através da view "tabela"</br>
-![Simulacao-quartas](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/view-quartas.png?raw=true) </br>
+
+![SimulacaoQuartas](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/view-quartas.png?raw=true) </br>
   </br>
   </br>
 - E com isso a reenderização resultará na seguinte tela </br>
-![Tela-quartas](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/quartas.png?raw=true) </br>
+
+![TelaQuartas](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/quartas.png?raw=true) </br>
   </br>
   </br>
-- A lógica de desempate é a seguinte (por pênaltis)
+- A lógica de desempate é a seguinte (por pênaltis)</br>
+
 ``` 
 public function desempate($gols)
     {
@@ -74,15 +79,18 @@ public function desempate($gols)
         return $gols;
     }
 ```
-> Em desenvolvimento...
-- A cada fase, o time vencedor receberá um UPDATE na fase que o mesmo possui
-- Conforme a fase muda, a query para busca dos times também, por exemplo: Quartas de finais = "Todos os times com ```{fase=4}```", Semi finais = "Todos os times com `{fase=2}`" e assim por diante
-![Update_fase](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/updateFase.png?raw=true) </br>
-  </br>
-  </br>
-- Por fim, será simulada a final e definido um campeão. Atribuindo o id do time campeão ao idCampeao na tabela do campeonato em vigência, e assim por diante.
 
-![Apresentacao_campeao](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/final.png?raw=true) </br>
+> Em desenvolvimento...
+</br>
+- A cada fase, o time vencedor receberá um UPDATE na fase que o mesmo possui
+- Conforme a fase muda, a query para busca dos times também, por exemplo: Quartas de finais = "Todos os times com ```{fase=4}```", Semi finais = "Todos os times com `{fase=2}`" e assim por diante </br>
+
+![UpdateFase](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/updateFase.png?raw=true) </br>
+</br>
+</br>
+- Por fim, será simulada a final e definido um campeão. Atribuindo o id do time campeão ao idCampeao na tabela do campeonato em vigência, e assim por diante. </br>
+
+![ApresentacaoCampeao](https://github.com/hallisonbrancalhao/Meu-Campeonato/blob/master/assets/final.png?raw=true) </br>
   </br>
   </br>
 <h1 align="center">🌎 Onde você me encontra? 🌍</h1>
