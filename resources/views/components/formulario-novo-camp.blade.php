@@ -1,4 +1,4 @@
-<form class="needs-validation" method="post" action="/campeonatos/criar">
+<form class="needs-validation" method="post" action="{{ route('campeonatos.store') }}">
     @csrf
     <div class="row g-3">
         <div class="col-sm-6">

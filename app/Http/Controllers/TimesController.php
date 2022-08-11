@@ -9,15 +9,15 @@ class TimesController extends Controller
 {
     public function index(Request $request)
     {
-        //
+
     }
 
     public function create(){
-        return view('times.create');
+
     }
 
-    public function store($novosTimes)
+    public function store(Request $request)
     {
-        //
+
     }
 }

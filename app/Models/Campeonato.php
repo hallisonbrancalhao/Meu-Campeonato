@@ -10,7 +10,6 @@ class Campeonato extends Model
     use HasFactory;
     protected $fillable = ['id', 'nome', 'idCampeao', 'idVice', 'idTerceiro'];
     public $timestamps = false;
-
     public $table = 'campeonatos';
 
 }

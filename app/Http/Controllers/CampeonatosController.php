@@ -19,18 +19,18 @@ class CampeonatosController extends Controller
     public function create()
     {
         $partidas = DB::select("
-        select  b.nome as timeVisitante,
-                c.nome as timeCasa,
-                a.golsTimeCasa,
-                a.golsTimeVisitante
-        from partidas a
-            left join times b on
-                a.idTimeVisitante = b.id and
-                a.idCampeonato = b.idCampeonato
-            left join times c on
-                a.idTimeCasa = c.id and
-                a.idCampeonato = c.idCampeonato
-        where a.fase = 4 and a.idCampeonato = 2
+            select  b.nome as timeVisitante,
+                    c.nome as timeCasa,
+                    a.golsTimeCasa,
+                    a.golsTimeVisitante
+            from partidas a
+                left join times b on
+                    a.idTimeVisitante = b.id and
+                    a.idCampeonato = b.idCampeonato
+                left join times c on
+                    a.idTimeCasa = c.id and
+                    a.idCampeonato = c.idCampeonato
+            where a.fase = 4 and a.idCampeonato = 1
         ");
 
         return view('campeonatos.quartas', compact('partidas'));
@@ -38,25 +38,24 @@ class CampeonatosController extends Controller
 
     public function store(Request $request)
     {
-
-        $nomeCampeonato = $request->input('nomeCampeonato');
         $campeonato = new Campeonato();
+        $nomeCampeonato = $request->input('nomeCampeonato');
         $campeonato->nome = $nomeCampeonato;
         $campeonato->save();
 
         $timesNovos = [
-            'time1' => $request->input('time1'),
-            'time2' => $request->input('time2'),
-            'time3' => $request->input('time3'),
-            'time4' => $request->input('time4'),
-            'time5' => $request->input('time5'),
-            'time6' => $request->input('time6'),
-            'time7' => $request->input('time7'),
-            'time8' => $request->input('time8'),
+            'time1' => $request->time1,
+            'time2' => $request->time2,
+            'time3' => $request->time3,
+            'time4' => $request->time4,
+            'time5' => $request->time5,
+            'time6' => $request->time6,
+            'time7' => $request->time7,
+            'time8' => $request->time8,
         ];
 
         foreach ($timesNovos as $item) {
-            $novoTime = new Time;
+            $novoTime = new Time();
             $novoTime->nome = $item;
             $novoTime->idCampeonato = $campeonato->getAttributeValue('id');
             $novoTime->GP = 0;
@@ -78,7 +77,8 @@ class CampeonatosController extends Controller
             $partida->fase = 4;
             $partida->save();
         }
-        return redirect('campeonatos/quartas');
+
+            return redirect('campeonatos/quartas');
     }
 
     public function show(Campeonato $campeonatos)

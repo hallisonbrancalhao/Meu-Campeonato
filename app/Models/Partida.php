@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Partida extends Model
 {
     use HasFactory;
+    protected $fillable = ['idTimeVisitante', 'idTimeCasa', 'idCampeonato'];
     public $timestamps = false;
 }
